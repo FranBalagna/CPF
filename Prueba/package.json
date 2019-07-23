@@ -1,0 +1,19 @@
+{
+  "name": "prueba",
+  "version": "1.0.0",
+  "description": "",
+  "main": "prueba.js",
+  "scripts": {
+    "prueba": "node prueba.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@extra-array/binary-search": "^1.1.7",
+    "array-sort": "^1.0.0",
+    "fast-sort": "^1.5.6",
+    "readline-sync": "^1.4.9",
+    "value-is": "^2.0.0"
+  }
+}
