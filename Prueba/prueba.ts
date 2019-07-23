@@ -7,11 +7,10 @@ let opciones: number;
 let nombreABuscar : string;
 let numEnArreglo : number;
 let nombre : string;
-let lala : number = 0;
+
 
 menu();
 
-console.log(lala);
 function menu() {
     console.log("1_agregar");
     console.log("2_eliminar");
