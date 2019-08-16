@@ -36,8 +36,8 @@ class Kiosko {
         return item;
     }
 
-    public venderItem(){
-
+    public venderItem(stock){
+        
     }
     public imprimir (stock){
         for (let i = 0; i < stock.length; i++) {
