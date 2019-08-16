@@ -1,0 +1,5 @@
+Herencia: class Smart extends Televisor / constructor{super()} (FLECHA CERRADA PARA CLASE MADRE)
+Composicion: export default "Clase a exportar" / import "" as "./" (FLECHA ROMBO PARA CLASE COMPLEJA)
+Interfaz: interface Auto / class AutoCarrera implements Auto (FLECHA CON LINEA PUNTEADA PARA LA INTERFACE)
+Abstract: abstract class AutoCiudad / class AutoCiudadChico extends AutoCiudad (FLECHA CERRADA A CLASE ABSTRACTA CON UN EXTENDS EN EL MEDIO)
+Errores: throw new Error ("") / try {lo que haga} catch(error) {lo que pasa si encuentra error}
