@@ -9,6 +9,14 @@ var autos = new Array();
 var RegistroAutomotor = /** @class */ (function () {
     function RegistroAutomotor(autos) {
         this.autos = autos;
+        this.lineas = this.leerArchivo();
+        var rueda;
+        for (var i = 0; i < this.lineas.length; i++) {
+            this.datosDelAuto = this.separarDatosDelAuto(this.lineas, i);
+            this.motor = new Motor_1["default"](this.datosDelAuto[2]);
+            rueda = new Rueda_1["default"](25);
+            autos.push(new Auto_1["default"](this.datosDelAuto[0], this.motor, rueda));
+        }
     }
     RegistroAutomotor.prototype.leerArchivo = function () {
         var archivo = fs.readFileSync("./info_autos.txt", 'utf8');
@@ -25,22 +33,22 @@ var RegistroAutomotor = /** @class */ (function () {
             console.log(autos[i]);
         }
     };
-    RegistroAutomotor.prototype.insertar = function () {
-        // this.marca= readlineSync.question("Marca del auto: ")
-        // this.motor= readlineSync.question("Tipo de motor: ")
-        // this.ruedas= readlineSync.question("Aire de las ruedas: ")
-        // autos.push(new Auto(this.marca,this.motor,this.ruedas));
-        var datosDelAuto;
-        var lineas = this.leerArchivo();
-        var rueda;
-        for (var i = 0; i < lineas.length; i++) {
-            datosDelAuto = this.separarDatosDelAuto(lineas, i);
-            this.motor = new Motor_1["default"](datosDelAuto[2]);
-            rueda = new Rueda_1["default"](25);
-            autos.push(new Auto_1["default"](datosDelAuto[0], this.motor, rueda));
-        }
-        console.log("Autos agregados con exito!");
-    };
+    // public insertar() : void {
+    //     // this.marca= readlineSync.question("Marca del auto: ")
+    //     // this.motor= readlineSync.question("Tipo de motor: ")
+    //     // this.ruedas= readlineSync.question("Aire de las ruedas: ")
+    //     // autos.push(new Auto(this.marca,this.motor,this.ruedas));
+    //     let datosDelAuto : string[];
+    //     let lineas = this.leerArchivo();
+    //     let rueda : Rueda;
+    //     for (let i = 0; i < lineas.length; i++) {
+    //         datosDelAuto = this.separarDatosDelAuto(lineas, i);    
+    //         this.motor = new Motor (datosDelAuto[2]);
+    //         rueda = new Rueda (25)
+    //         autos.push(new Auto(datosDelAuto[0],this.motor,rueda));
+    //     }
+    //     console.log("Autos agregados con exito!");
+    // }
     RegistroAutomotor.prototype.consultar = function () {
         console.log("Lo que desea buscar: ");
         this.marca = readlineSync.question("Marca del auto: ");
@@ -75,6 +83,4 @@ var RegistroAutomotor = /** @class */ (function () {
     return RegistroAutomotor;
 }());
 var registro = new RegistroAutomotor(autos);
-console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-registro.insertar();
 registro.imprimir(autos);

@@ -1,0 +1,9 @@
+Kiosko {Variables: Stock[] : Items[]
+Metodos: Agregar items , Vender items }
+
+Stock { items : Items[]}
+
+Items { items : string , costo, cantidad}
+
+En agregar items, separo el item en nombre, costo y cantidad, una vez tengo el item separado en 
+un arreglo de items (en el objeto Stock) ya puedo manipularlos para realizar las ventas que deseo verificando stock.etc.

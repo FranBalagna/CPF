@@ -7,22 +7,22 @@ class Auto {
         this.estaPrendido = false;
     }
 
-    prenderApagarAuto() {
+    public prenderApagarAuto() {
         if (this.estaPrendido) 
             this.estaPrendido = false;
         else 
             this.estaPrendido = true;
     }
 
-    acelerarAuto(){
+    public acelerarAuto(){
         this.acelerar = this.acelerar + 1;
     }
 
-    frenarAuto() {
+    public frenarAuto() {
         this.acelerar = 0;
     }
 
-    cargarNafta(){
+    public cargarNafta(){
         this.nafta = this.nafta + 1;
     }
 }
